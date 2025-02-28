@@ -3,15 +3,12 @@ import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
 import HOME from './page/HOME';
 import Product from './page/Product';
-import { useState } from 'react';
+import Media from './page/Media';
 
 import './style.scss';
 
 function App() {
-    const [color, setColor] = useState('white');
-
     return (
-        <div style={{background:color}}>
             <BrowserRouter>
                 <header>
                     <NavLink to="/">HOME</NavLink>
@@ -19,12 +16,12 @@ function App() {
                 </header>
                 <main>
                     <Routes>
-                        <Route path="/" element={<HOME c={setColor}/>}/>
-                        <Route path="/Product" element={<Product c={setColor}/>}/>
+                        <Route path="/" element={<HOME/>}/>
+                        <Route path="/Product" element={<Product/>}/>
+                        <Route path="/Media" element={<Media/>}/>
                     </Routes>
                 </main>
             </BrowserRouter>
-        </div>
     );
 }
 
